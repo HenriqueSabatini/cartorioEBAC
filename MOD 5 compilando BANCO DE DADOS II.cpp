@@ -98,8 +98,7 @@ int deletar() // função segundaria
 	printf("Qual CPF deseja deletar? ");
 	scanf("%s", cpf);
 	
-	remove(cpf);
-	
+	remove(cpf);	
 	FILE *file;
 	file = fopen(cpf, "r"); // "r" = Read = Ler o arquivo
 	
@@ -130,7 +129,8 @@ int main() // Função PRINCIPAL
 		printf("Escolha a opção no menu:\n\n");
 		printf("\t1 - Registrar nomes\n");
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n"); 
+		printf("\t3 - Deletar nomes\n"); 
+		printf("\t4 - Sair do sistema\n\n");
 		printf("Opção:"); // Fim do menu
 	
 	 	scanf("%d", &opcao); // armanezando a escolha do usuario
@@ -149,6 +149,11 @@ int main() // Função PRINCIPAL
 			
 			case 3:
 			deletar();
+			break;
+			
+			case 4:
+			printf("Obrigado, volte sempre");
+			return 0;
 			break;
 			
 			default:
